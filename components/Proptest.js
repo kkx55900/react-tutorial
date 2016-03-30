@@ -12,7 +12,7 @@ class Proptest extends Component {
 		return( 
 
 		<div> 
-			<p>{this.props.text}</p>
+			
 			<button onClick={this.props.deleteLetter}> </button>
 
 		</div>

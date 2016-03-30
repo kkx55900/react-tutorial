@@ -25,19 +25,8 @@ class TextInput extends Component {
  	this.setState({inputText:e.target.value});
  }
  deleteLetter(){
- 	$.ajax({
-	 type:"POST",
-      url: "/hi",
-      dataType: 'text',
-      success: function(data) {
-        console.log(data);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error("error");
-      }.bind(this)
-    });
 
- 	
+
  	this.setState({
  		inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
  	});
@@ -49,12 +38,7 @@ class TextInput extends Component {
 
 
   render() {
-  	var checkFalse = true;
-  	if(checkFalse){
-  		checkFalse =  <Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>;
- 	}else{
-  		checkFalse = <p>This is false</p>
-  	}
+  
 
 
 
@@ -63,7 +47,6 @@ class TextInput extends Component {
         
     	<input    value={this.state.inputText}     onChange={this.handleChange} />
     	
-    	{checkFalse}
 
       </div>
     )

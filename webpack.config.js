@@ -6,7 +6,8 @@ module.exports = {
     app:[
     'webpack-hot-middleware/client',
     './client/client.js'
-  ]
+  ],
+  vendor:['react','react-dom']
 },
 
   output: {
@@ -17,7 +18,8 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
   ],
   module: {
     loaders: [
